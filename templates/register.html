@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}Register - AutoCaptions{% endblock %}
+
+{% block head %}
+<!-- Link to specific register page styles -->
+<link rel="stylesheet" href="{{ url_for('static', filename='styling/register.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="flex items-center justify-center min-h-[calc(100vh-16rem)]">
+    <!-- Registration Card -->
+    <div class="w-full max-w-md bg-white p-8 rounded-2xl shadow-xl border border-gray-100 register-card-enter">
+        
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-2xl font-bold text-gray-900">Create an Account</h1>
+            <p class="text-sm text-gray-500 mt-2">Sign up to start auto-captioning your videos.</p>
+        </div>
+
+        <!-- Form -->
+        <form action="/register" method="POST" class="space-y-5">
+            <!-- Name Field -->
+            <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                <input type="text" id="name" name="name" required placeholder="John Doe" 
+                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none transition custom-input">
+            </div>
+
+            <!-- Email Field -->
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="you@example.com" 
+                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none transition custom-input">
+            </div>
+
+            <!-- Password Field -->
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                <input type="password" id="password" name="password" required placeholder="••••••••" 
+                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none transition custom-input">
+            </div>
+
+            <!-- Confirm Password Field -->
+            <div>
+                <label for="confirm_password" class="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
+                <input type="password" id="confirm_password" name="confirm_password" required placeholder="••••••••" 
+                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none transition custom-input">
+            </div>
+
+            <!-- Submit Button -->
+            <div class="pt-2">
+                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition transform hover:-translate-y-0.5">
+                    Sign Up
+                </button>
+            </div>
+        </form>
+
+        <!-- Footer / Login Link -->
+        <div class="mt-6 text-center">
+            <p class="text-sm text-gray-600">
+                Already have an account? 
+                <a href="/login" class="font-semibold text-indigo-600 hover:text-indigo-500 hover:underline transition">
+                    Log in here
+                </a>
+            </p>
+        </div>
+        
+    </div>
+</div>
+{% endblock %}

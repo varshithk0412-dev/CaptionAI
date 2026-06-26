@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - CaptionAI{% endblock %}
+
+{% block head %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='styling/home.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="animate-fade-in">
+
+    <section class="py-12 sm:py-20 flex flex-col lg:flex-row items-center justify-between gap-12">
+        
+        <!-- Hero Text content -->
+        <div class="lg:w-1/2 space-y-8 text-center lg:text-left">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900">
+                Turn your videos into <br>
+                <span class="hero-gradient-text text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">accessible stories.</span>
+            </h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto lg:mx-0">
+                Upload any video and let our system automatically generate accurate captions for it. Review your video with perfectly synced subtitles in seconds.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                <a href="/register" class="w-full sm:w-auto px-8 py-3 rounded-lg text-base font-semibold text-white bg-indigo-600 hover:bg-indigo-700 shadow-md transition transform hover:-translate-y-0.5">
+                    Register for Free
+                </a>
+            </div>
+        </div>
+
+        <!-- Hero Graphic / Video Placeholder -->
+        <div class="lg:w-1/2 w-full max-w-lg floating-graphic">
+            <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-4 aspect-video flex items-center justify-center relative overflow-hidden">
+                <!-- Decorative background elements -->
+                <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 to-purple-50 opacity-50"></div>
+                
+                <!-- Play button icon & Subtitle mockup -->
+                <div class="relative z-10 flex flex-col items-center gap-6 w-full px-8">
+                    <div class="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center shadow-lg">
+                        <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M4 4l12 6-12 6z"></path>
+                        </svg>
+                    </div>
+                    <div class="bg-black/70 text-white text-sm sm:text-base px-4 py-2 rounded-md font-medium tracking-wide w-3/4 text-center">
+                        Captions appear right here...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <hr class="border-gray-200 my-12">
+
+    <!-- How it works section -->
+    <section class="py-12">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900">How it works</h2>
+            <p class="mt-4 text-gray-600">Get perfectly synced captions in three simple steps.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Step 1 -->
+            <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm text-center">
+                <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+                <h3 class="text-xl font-semibold mb-2">Upload Video</h3>
+                <p class="text-gray-500 text-sm">Upload your MP4, MOV, or WebM video file directly to our secure platform.</p>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm text-center">
+                <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+                <h3 class="text-xl font-semibold mb-2">Auto-Process</h3>
+                <p class="text-gray-500 text-sm">Our system extracts the audio and generates highly accurate timestamps and text.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm text-center">
+                <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+                <h3 class="text-xl font-semibold mb-2">View & Export</h3>
+                <p class="text-gray-500 text-sm">Watch your video with the captions layered on top, or download the subtitles.</p>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

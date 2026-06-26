@@ -1,0 +1,14 @@
+
+.grid > div {
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+
+video::-webkit-media-controls {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+video:hover::-webkit-media-controls {
+    opacity: 1;
+}
