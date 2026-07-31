@@ -24,17 +24,3 @@ def create_captions(file_path):
         })
         
     return captions
-
-if __name__ == "__main__":
-    test_file = "user_uploads/1/test_video.mp4" 
-    
-    if os.path.exists(test_file):
-        try:
-            output = create_captions(test_file)
-            print("\n--- Generation Successful! ---")
-            for cap in output[:3]: # Show first 3 captions
-                print(f"[{cap['start']}s -> {cap['end']}s]: {cap['text']}")
-        except Exception as e:
-            print(f"An error occurred: {e}")
-    else:
-        print(f"To test this script, place a file at: {test_file}")
